@@ -15,6 +15,16 @@ int gcdOrHcfBruteForce(int a, int b)
      }
      return gcd;
 }
+
+int gcdEuclidean(int a, int b){
+     while (b!=0)
+     {
+          int temp = b; // temp (1. (18),2.(12),(6))
+          b = a%b; // b (1,(12%18 => 12) 2. (18%12=>6),3.(12%6=>0))
+          a = temp; // a (1,(18),2.(12),3.(6))
+     }
+    return a; 
+}
 int main()
 {
      int a = 12;
@@ -22,6 +32,10 @@ int main()
 
      int gcdCheck = gcdOrHcfBruteForce(a,b);
 
-     cout<<gcdCheck<<endl;
+     cout<<" By Brute Force -: "<<gcdCheck<<endl;
+
+     int gcdCheckByEuclidean = gcdEuclidean(a,b);
+
+     cout<<" By Euclidean -: "<<gcdCheckByEuclidean<<endl;
      return 0;
 }
