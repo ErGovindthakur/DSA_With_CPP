@@ -4,12 +4,12 @@ using namespace std;
 // Print something n times with the help of recursion
 
 void printNTimes(int num){
-     if(num==6)return;
+     if(num>6)return;
 
      cout<<num<<endl;
      num++;
 
-     printNTimes(num);
+     printNTimes(num++);
 
 
 }

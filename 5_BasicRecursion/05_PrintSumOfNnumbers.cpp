@@ -2,6 +2,8 @@
 using namespace std;
 
 int printSumOfNnumbers(int num){
+     // if(num<1)return 0;
+     // return num+printSumOfNnumbers(num-1);
      if(num>7)return 0;
      return num+printSumOfNnumbers(num+1);
 }

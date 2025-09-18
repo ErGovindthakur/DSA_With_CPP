@@ -5,8 +5,8 @@ void printNToOne(int num){
      if(num<1)return;
 
      cout<<num<<endl;
-
-     printNToOne(num-1);
+     num--;
+     printNToOne(num);
 }
 int main() {
      int num = 7;
