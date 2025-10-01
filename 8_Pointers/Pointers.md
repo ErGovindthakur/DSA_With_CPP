@@ -38,3 +38,5 @@ cout << *(p+2) << endl; // 30
 . If you pass variables directly → function gets a copy.
 . If you pass pointers → function can modify the original value.
 
+### 7. Dynamic Memory with Pointers
+. We can create memory at runtime (not fixed like arrays).
