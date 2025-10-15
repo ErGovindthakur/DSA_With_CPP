@@ -26,7 +26,7 @@ public class HashMapExp {
 
           // 7. iterating over hashmap entries
           for(String key : marks.keySet()){
-               System.out.println(key+ " => "+ marks.get((key)));
+               System.out.println(key+ " => "+ marks.get(key));
           }
      }
 }
