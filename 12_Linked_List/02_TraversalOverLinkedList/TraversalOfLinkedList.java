@@ -7,6 +7,17 @@ class Node{
           this.data = data;
      }
 }
+
+class DisplayLinkedList{
+     void display(Node head){
+          System.out.println("Display Linked list with function");
+          while(head!=null){
+               System.out.print(head.data+"->");
+               head = head.next;
+          }
+          System.out.println("null");
+     }
+}
 public class TraversalOfLinkedList {
    public static void main(String[] args) {
      // creating instance of Node class and putting value
@@ -39,5 +50,9 @@ public class TraversalOfLinkedList {
           temp2 = temp2.next;
      }
      System.out.println("null");
+
+     // Now displaying linked list with a function
+     DisplayLinkedList dispL = new DisplayLinkedList();
+     dispL.display(a);
    }  
 }
