@@ -9,13 +9,16 @@ class Node{
 }
 
 class DisplayLinkedList{
-     void display(Node head){
+     int count = 0;
+     int display(Node head){
           System.out.println("Display Linked list with function");
           while(head!=null){
+               count++;
                System.out.print(head.data+"->");
                head = head.next;
           }
           System.out.println("null");
+          return count;
      }
 }
 public class TraversalOfLinkedList {
@@ -53,6 +56,8 @@ public class TraversalOfLinkedList {
 
      // Now displaying linked list with a function
      DisplayLinkedList dispL = new DisplayLinkedList();
+     int linkedListLength = dispL.count;
+     System.out.println("Total Length of Linked List => "+ linkedListLength);
      dispL.display(a);
    }  
 }
