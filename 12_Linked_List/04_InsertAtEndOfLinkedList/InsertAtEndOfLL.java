@@ -13,7 +13,7 @@ class Node{
 class LinkedList{
      Node head = null; // first node
      Node tail = null; // last node
-
+     int n = 0;
      // 1. Adding Node at end 
      void insertAtEnd(int data){
           // calling constructor to add value
@@ -25,6 +25,7 @@ class LinkedList{
                tail.next = temp;
                tail = temp;
           }
+          n++;
      }
 
      // 2. Adding Node at beginning
@@ -40,6 +41,7 @@ class LinkedList{
                temp.next = head;
                head = temp;
           }
+          n++;
      }
      // 3. display linked list
      void display(){
@@ -52,19 +54,18 @@ class LinkedList{
      }
 
      //4. size of linked list
-     int size(){
-          int count = 0;
-          Node temp = head;
-          while (temp != null) {
-              count++;
-              temp = temp.next; 
-          }
-          return count;
-     }
+     // int size(){
+     //      int count = 0;
+     //      Node temp = head;
+     //      while (temp != null) {
+     //          count++;
+     //          temp = temp.next; 
+     //      }
+     //      return count;
+     // }
 
-     // insert node at any specific index
+     // 5. insert node at any specific index
      void insertAt(int idx, int data){
-          int n = size();
           Node newNode = new Node(data); // going to be inserted
           Node temp = head; // copy of head
           if(idx==n){
@@ -84,7 +85,21 @@ class LinkedList{
           // inserting the node
           newNode.next = temp.next;
           temp.next = newNode;
+          n++;
      }
+     // 6. get data at index
+     int getAt(int idx){
+          if(idx<0 || idx>=n){
+               System.out.println("Pls enter valid index number");
+               return -1;
+          }
+          Node temp = head;
+          for(int i = 0; i<idx; i++){
+               temp = temp.next;
+          }
+          return temp.data;
+     }
+
 }
 public class InsertAtEndOfLL {
     public static void main(String[] args) {
@@ -102,7 +117,11 @@ public class InsertAtEndOfLL {
      ll.display();
 
      // calling find the length of ll
-     int length = ll.size();
+     int length = ll.n;
      System.out.println("Length of LinkedList -> "+length);
+
+     // get elem at particular index
+     int elem = ll.getAt(2);
+     System.out.println("Elem at index 2 -> "+elem);
     } 
 }
