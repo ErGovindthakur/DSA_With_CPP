@@ -22,6 +22,15 @@ class DisplayLinkedList{
      }
 }
 public class TraversalOfLinkedList {
+
+     static void insertAt(Node head,int data){
+          Node temp =  new Node(data);
+          Node t = head;
+          while(t.next!=null){
+               t = t.next;
+          }
+          t.next = temp;
+     }
    public static void main(String[] args) {
      // creating instance of Node class and putting value
      Node a = new Node(1);
@@ -32,6 +41,7 @@ public class TraversalOfLinkedList {
      a.next = b;
      b.next = c;
 
+     insertAt(a,100);
      // traversing over linked list
      // creating a temporary Node so that move to next
      Node temp = a;
