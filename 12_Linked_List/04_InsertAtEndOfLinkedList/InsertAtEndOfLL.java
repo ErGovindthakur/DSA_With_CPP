@@ -99,6 +99,19 @@ class LinkedList{
           }
           return temp.data;
      }
+     // 7. delete at index
+     void deleteAt(int idx){
+          // for deleting 0th index
+          if(idx==0) head = head.next;
+
+          Node temp = head;
+          for(int i = 0; i<idx; i++){
+               temp = temp.next;
+          }
+          temp.next = temp.next.next;
+          tail = temp;
+          n--;
+     }
 
 }
 public class InsertAtEndOfLL {
@@ -108,11 +121,16 @@ public class InsertAtEndOfLL {
      ll.insertAtBeginning(1);
      ll.insertAtEnd(2);
      ll.insertAtEnd(3);
+     ll.insertAtEnd(11);
      ll.insertAtEnd(7);
      ll.insertAt(3, 4);
      ll.insertAt(9, 9);
      ll.insertAtBeginning(0);
 
+     // deleting at any index
+     ll.deleteAt(4);
+     ll.deleteAt(0);
+     // System.out.println(ll.head.data);
      // calling display ll method
      ll.display();
 
