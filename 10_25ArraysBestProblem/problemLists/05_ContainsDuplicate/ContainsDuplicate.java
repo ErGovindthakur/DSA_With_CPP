@@ -17,7 +17,7 @@ class IsDuplicateValue{
 }
 public class ContainsDuplicate {
      public static void main(String[] args) {
-          int [] dupElem = {1,9,2,3,5};
+          int [] dupElem = {1,9,2,3,5,2};
 
           IsDuplicateValue dup = new IsDuplicateValue();
 
