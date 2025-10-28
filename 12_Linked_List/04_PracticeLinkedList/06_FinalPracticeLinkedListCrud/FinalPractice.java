@@ -29,7 +29,7 @@ class LinkedList{
         }
         size++;
     }
-    // 2. diplaying all nodes in ll
+    // 2. displaying all nodes in ll
     void display(){
         Node temp = head;
         while(temp!=null){
@@ -76,7 +76,7 @@ class LinkedList{
             // size++;
             // return;
             
-            // 2. lset suppose you don't know tail (2nd one)
+            // 2. let suppose you don't know tail (2nd one)
             Node tHead = head;
             while(tHead.next!=null){
                 tHead = tHead.next;
