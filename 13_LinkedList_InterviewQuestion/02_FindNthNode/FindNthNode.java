@@ -63,6 +63,25 @@ class LinkedList {
 
           return temp;
      }
+
+     // 3. find nth node from last using two pointers
+     Node nthNodeFromLastTwoPointer(int nIdx){
+          Node slow = head;
+          Node fast = head;
+
+          for(int i = 0; i<nIdx; i++){
+               fast = fast.next;
+          }
+
+          while (fast != null) {
+               slow = slow.next;
+               fast =fast.next;
+          }
+          if(slow.next != null){
+               return slow;
+          }
+          return null;
+     }
 }
 
 public class FindNthNode {
@@ -85,6 +104,9 @@ public class FindNthNode {
           // getting nth node from last idx
           Node daNodeFromLast = ll.getNodeFromLast(2);
           System.out.println("Node from last Idx 2 is => " + daNodeFromLast.data);
+          // getting nth node from last idx
+          Node daNodeFromLast2Pointer = ll.nthNodeFromLastTwoPointer(2);
+          System.out.println("Node from last Idx 2 is using two pointer approach => " + daNodeFromLast2Pointer.data);
           System.out.println("Size of above ll => " + ll.size);
      }
 }
