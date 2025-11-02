@@ -40,7 +40,7 @@ class LinkedList {
      Node getNode(int nIdx) {
           Node temp = head;
 
-          if (nIdx < 0 || nIdx > size) {
+          if (nIdx <= 0 || nIdx > size) {
                System.out.println("Please enter a valid number of nIdx");
                return null;
           }
@@ -53,7 +53,7 @@ class LinkedList {
      // 2. if head is given find nth node from last
      Node getNodeFromLast(int nIdx) {
           Node temp = head;
-          if (nIdx < 0 || nIdx > size) {
+          if (nIdx <= 0 || nIdx > size) {
                System.out.println("Please enter a valid number of nIdx");
                return null;
           }
