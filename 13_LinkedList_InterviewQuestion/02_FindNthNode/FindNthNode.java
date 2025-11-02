@@ -36,13 +36,24 @@ class LinkedList{
           System.out.println("null");
      }
 
-     // if head is given find nth from start
+     // 1. if head is given find nth from start
      Node getNode(int nIdx){
           Node temp = head;
 
           for(int i = 0; i<nIdx; i++){
                temp = temp.next;
           }
+          return temp;
+     }
+
+     // 2. if head is given find nth node from last 
+     Node getNodeFromLast(int nIdx){
+          Node temp = head;
+
+          for(int i = 1; i<=size-nIdx; i++){
+               temp  = temp.next;
+          }
+
           return temp;
      }
 }
@@ -62,5 +73,10 @@ public class FindNthNode {
          // getting the actual node
          Node dataNode = ll.getNode(2);
          System.out.println("Node at nIdx 2 is => "+dataNode.data);
+
+         // getting nth node from last idx
+         Node daNodeFromLast = ll.getNodeFromLast(2);
+         System.out.println("Node from last Idx 2 is => "+daNodeFromLast.data);
+         System.out.println("Size of above ll => "+ ll.size);
      }
 }
