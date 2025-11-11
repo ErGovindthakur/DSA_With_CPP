@@ -17,7 +17,8 @@ public class FindNumWithEvenDigit {
           return maxCount;
      }
      public static void main(String[] args) {
-        int [] arr = {12,345,2,6,7896};
+     //    int [] arr = {12,345,2,6,7896};
+        int [] arr = {437,315,322,431,686,264,442};
         
         int digit = evenDigitNum(arr);
         System.out.println("Here is the even digit num => "+ digit);
