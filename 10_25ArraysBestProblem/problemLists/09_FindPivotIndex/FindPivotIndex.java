@@ -11,12 +11,12 @@ public class FindPivotIndex {
           }
           System.out.println("Here is the total sum -> "+ totalSum);
 
-          for(int i = 1; i<arr.length; i++){
-               leftSum += arr[i-1];
+          for(int i = 0; i<arr.length; i++){
+               if(i>0)leftSum += arr[i-1];
 
                rightSum = totalSum - arr[i] - leftSum;
 
-               System.out.println("LeftSum -> "+ leftSum + " RightSum -> "+rightSum);
+               // System.out.println("LeftSum -> "+ leftSum + " RightSum -> "+rightSum);
                if(leftSum == rightSum){
                     return i;
                }
