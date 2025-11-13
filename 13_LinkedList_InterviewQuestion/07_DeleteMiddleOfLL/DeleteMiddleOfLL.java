@@ -52,13 +52,15 @@ class LinkedList{
      void deleteMidNodeTwoPointer(){
           Node slow = head;
           Node fast = head;
+          Node prev = null;
 
-          while(fast.next != null){
+          while(fast != null && fast.next != null){
+               prev = slow;
                slow = slow.next;
-               fast = fast.next.next.next;
+               fast = fast.next.next;
           }
 
-          slow.next = slow.next.next;
+          prev.next = slow.next;
           // System.out.println("Here is the exact prev mid -> "+slow.val);
      }
 }
