@@ -37,7 +37,7 @@ class LinkedList{
 
      void deleteMiddleNode(){
           Node temp = head;
-          if(head==null){
+          if(head==null || head.next == null){
                System.out.println("LL is already empty");
                return;
           }
@@ -47,6 +47,19 @@ class LinkedList{
           temp.next = temp.next.next;
           // System.out.println("Here is the current mid node -> "+temp.val);
           size--;
+     }
+
+     void deleteMidNodeTwoPointer(){
+          Node slow = head;
+          Node fast = head;
+
+          while(fast.next != null){
+               slow = slow.next;
+               fast = fast.next.next.next;
+          }
+
+          slow.next = slow.next.next;
+          // System.out.println("Here is the exact prev mid -> "+slow.val);
      }
 }
 public class DeleteMiddleOfLL {
@@ -60,9 +73,10 @@ public class DeleteMiddleOfLL {
      ll.insertNode(2);
      ll.insertNode(6);
 
-     ll.display();
+     // ll.display();
      
-     ll.deleteMiddleNode();
+     // ll.deleteMiddleNode();
+     ll.deleteMidNodeTwoPointer();
      ll.display();
 
      System.out.println("The size of ll -> "+ ll.size);
