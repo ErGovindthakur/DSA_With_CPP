@@ -3,9 +3,5 @@
     "iostream": "cpp",
     "ostream": "cpp"
   },
-  "cSpell.words": [
-    "diplaying",
-    "linkedlist",
-    "nullptr"
-  ]
+  "cSpell.words": ["Deque", "diplaying", "linkedlist", "nullptr"]
 }
