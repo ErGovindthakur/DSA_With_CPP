@@ -69,61 +69,60 @@ class LinkedList {
           Node mHead1 = head1;
           Node mHead2 = head2;
 
-          int mSize1 = 0;
-          int mSize2 = 0;
-          if (head1 == null && head2 == null) {
-               System.out.println("List is empty");
+          if (mHead1 == null) {
+               mHead = head2;
+               return;
+          }
+          if (mHead2 == null) {
+               mHead = head1;
                return;
           }
 
-          while (mSize1 < size1 && mSize2 < size2) {
+          // Step 1: initialize merged head
+          if (mHead1.val < mHead2.val) {
+               mHead = mHead1;
+               mHead1 = mHead1.next;
+               mSize++;
+          } else {
+               mHead = mHead2;
+               mHead2 = mHead2.next;
+               mSize++;
+          }
+
+          mTail = mHead;
+
+          // Step 2: merge until one ends
+          while (mHead1 != null && mHead2 != null) {
                if (mHead1.val < mHead2.val) {
-                    if (mHead == null) {
-                         mHead = mHead1;
-                         mTail = mHead1;
-                    } else {
-                         mTail.next = mHead1;
-                         mTail = mHead1;
-                    }
-                    mSize++;
+                    mTail.next = mHead1;
                     mHead1 = mHead1.next;
-               } else {
-                    if (mHead == null) {
-                         mHead = mHead2;
-                         mTail = mHead2;
-                    } else {
-                         mTail.next = mHead2;
-                         mTail = mHead2;
-                    }
                     mSize++;
+               } else {
+                    mTail.next = mHead2;
                     mHead2 = mHead2.next;
+                    mSize++;
                }
-
-               mSize1++;
-               mSize2++;
+               mTail = mTail.next;
           }
 
-          while(mSize1<size1){
+          // Step 3: append remaining nodes
+          if (mHead1 != null)
                mTail.next = mHead1;
-               mTail = mHead1;
-               mSize1++;
-          }
-          while(mSize2<size2){
+               mSize++;
+          if (mHead2 != null)
                mTail.next = mHead2;
-               mTail = mHead2;
-               mSize2++;
-          }
+               mSize++;
      }
 
      void display3() {
           Node mTemp = mHead;
           // System.out.println(mTemp.val);
-          
+
           while (mTemp != null) {
                System.out.print(mTemp.val + "=>");
                mTemp = mTemp.next;
           }
-          System.out.println("nulla");
+          System.out.println("null");
      }
 }
 
